@@ -1,7 +1,7 @@
 import os
 
 
-def bulk_rename_images(directory, new_names):
+def bulk_rename(directory, new_names):
     # Check if the directory exists
     if not os.path.isdir(directory):
         print("Error: Directory not found.")
@@ -28,11 +28,14 @@ def bulk_rename_images(directory, new_names):
         except Exception as e:
             print(f"Error renaming '{old_name}': {str(e)}")
 
+def get_current_working_directory():
+    cwd = os.getcwd()
+    return cwd
 
-# Example usage
+
 if __name__ == "__main__":
-    directory = r"C:\Users\DeeDok\OneDrive\Desktop\lmao\imgs"  # Replace with your directory path
+    directory = get_current_working_directory()  # Replace with your directory path
 
     new_file_name = []
     # Replace with your list of new names
-    bulk_rename_images(directory, new_file_name)
+    bulk_rename(directory, new_file_name)
